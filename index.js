@@ -9,6 +9,7 @@ client.on("message", async message => {
     message.channel.send("Mystic's stats:")
     srv.getPlayers().then(data => message.channel.send(data + " players")) // Get & log the data!
     srv.getGamename().then(data => message.channel.send("Gamename: " + data))
+    srv.getServer().then(data => message.channel.send("Server it is being hosted on: " + data))
   }
 
   if(message.content === `${prefix}ggez`) {
@@ -16,6 +17,15 @@ client.on("message", async message => {
     message.channel.send("GGEZ's stats:")
     srv.getPlayers().then(data => message.channel.send(data + " players")) // Get & log the data!
     srv.getGamename().then(data => message.channel.send("Gamename: " + data))
+    srv.getServer().then(data => message.channel.send("Server it is being hosted on: " + data))
+  }
+  
+    if(message.content === `${prefix}zentrix`) {
+    let srv = new FiveM.Server('93.158.236.38:30120') // Set the IP with port.
+    message.channel.send("Zentrix's stats:")
+    srv.getPlayers().then(data => message.channel.send(data + " players")) // Get & log the data!
+    srv.getGamename().then(data => message.channel.send("Gamename: " + data))
+    srv.getServer().then(data => message.channel.send("Server it is being hosted on: " + data))
   }
 
   if(message.content.startsWith(`${prefix}stats`)) {
