@@ -1,0 +1,23 @@
+{
+  "name": "ideal-fivem-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filimonstefanmihai/ideal-fivem-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filimonstefanmihai/ideal-fivem-bot/issues"
+  },
+  "homepage": "https://github.com/filimonstefanmihai/ideal-fivem-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "fivem": "^2.1.2"
+  }
+}
