@@ -79,3 +79,17 @@ client.on("message", async message => {
 
 // nice try stealing this
 client.login(process.env.BOT_TOKEN)
+
+// for discord bot lists
+// does this work? i really do not know
+const dbots = require("dbots")
+const poster = new dbots.Poster({
+  client,
+  apiKeys: {
+    discordbotsgg: 'process.env.DISCORD_BOTS_GG',
+    topgg: 'process.env.TOP_GG'
+  },
+  clientLibrary: 'discord.js'
+});
+
+poster.startInterval();

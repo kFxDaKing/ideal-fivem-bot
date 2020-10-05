@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/filimonstefanmihai/ideal-fivem-bot#readme",
   "dependencies": {
+    "dbots": "^5.1.0",
     "discord.js": "^12.3.1",
     "fivem": "^2.1.2"
   }
