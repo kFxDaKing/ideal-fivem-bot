@@ -11,6 +11,8 @@ client.on("ready", () => {
 });
 
 client.on("message", async message => {
+
+    // custom server
   if(message.content === `${prefix}mystic`) {
     let srv = new FiveM.Server('45.95.115.8:30120') // Set the IP with port.
     message.channel.send("Mystic's stats:")
@@ -19,22 +21,27 @@ client.on("message", async message => {
     srv.getServer().then(data => message.channel.send("Server it is being hosted on: " + data))
   }
 
+
+  // custom server
   if(message.content === `${prefix}ggez`) {
-    let srv = new FiveM.Server('51.195.44.180:30120') // Set the IP with port.
+    let srv = new FiveM.Server('51.195.44.180:30120')
     message.channel.send("GGEZ's stats:")
-    srv.getPlayers().then(data => message.channel.send(data + " players")) // Get & log the data!
-    srv.getGamename().then(data => message.channel.send("Gamename: " + data))
-    srv.getServer().then(data => message.channel.send("Server it is being hosted on: " + data))
-  }
-  
-    if(message.content === `${prefix}zentrix`) {
-    let srv = new FiveM.Server('93.158.236.38:30120') // Set the IP with port.
-    message.channel.send("Zentrix's stats:")
-    srv.getPlayers().then(data => message.channel.send(data + " players")) // Get & log the data!
+    srv.getPlayers().then(data => message.channel.send(data + " players"))
     srv.getGamename().then(data => message.channel.send("Gamename: " + data))
     srv.getServer().then(data => message.channel.send("Server it is being hosted on: " + data))
   }
 
+
+  // custom server
+    if(message.content === `${prefix}zentrix`) {
+    let srv = new FiveM.Server('93.158.236.38:30120')
+    message.channel.send("Zentrix's stats:")
+    srv.getPlayers().then(data => message.channel.send(data + " players"))
+    srv.getGamename().then(data => message.channel.send("Gamename: " + data))
+    srv.getServer().then(data => message.channel.send("Server it is being hosted on: " + data))
+  }
+
+  // search stats by ip:port
   if(message.content.startsWith(`${prefix}stats`)) {
     let args = message.content.slice(8).trim().split(/ +/g)
     let srv = new FiveM.Server(`${args}`)
@@ -46,12 +53,15 @@ client.on("message", async message => {
         srv.getServer().then(data => message.channel.send("Server it is being hosted on: " + data))
       }
 
+      // status/ping command, need to add some more stuff to it since it is kinda dumb
     if(message.content === `${prefix}status`) {
       let pingMessage = await message.channel.send("Ping?!?!??!?")
       let pingMessage2 = await pingMessage.edit("pong, lmfao.")
       pingMessage2.edit(`The bot latency is ${pingMessage.createdTimestamp - message.createdTimestamp}ms. Discord's API Latency is ${Math.round(client.ws.ping)}ms.`)
     }
 
+
+    // help command !!MAKE IT LOOK COOL!!
     if(message.content === `${prefix}help`) {
       let helpEmbed = new Discord.MessageEmbed()
       .setColor(`#5600ff`)
@@ -67,4 +77,5 @@ client.on("message", async message => {
     }
     })
 
+// nice try stealing this
 client.login(process.env.BOT_TOKEN)
