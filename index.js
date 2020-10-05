@@ -86,8 +86,8 @@ const dbots = require("dbots")
 const poster = new dbots.Poster({
   client,
   apiKeys: {
-    discordbotsgg: 'process.env.DISCORD_BOTS_GG',
-    topgg: 'process.env.TOP_GG'
+    discordbotsgg: process.env.DISCORD_BOTS_GG,
+    topgg: process.env.TOP_GG
   },
   clientLibrary: 'discord.js'
 });
