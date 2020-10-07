@@ -79,7 +79,7 @@ client.on("message", async message => {
     if(message.content.startsWith(`${prefix}announcement`)) {
       if(message.author.id === `704369709809664060`) {
         const webhookThing = new Discord.WebhookClient('763317008489906186', process.env.DISCORD_WEBHOOK_TOKEN)
-        let args = message.content.slice(8).trim().split(/ +/g
+        let args = message.content.slice(8).trim().split(/ +/g)
         let webhookMessage = args.join(" ");
 
         webhookThing.send(webhookMessage)
